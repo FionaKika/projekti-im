@@ -5,7 +5,7 @@ export default function MesazhiIm() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
-        Ky është komponenti im i parë!
+        Ky është komponenti im i parë në React Native!
       </Text>
     </View>
   );
