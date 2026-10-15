@@ -49,7 +49,7 @@ export default function HomeScreen() {
         <MesazhiIm />
         
         <ThemedText>
-          Numri me useState: {numri}
+          Numri me useState: {numri} herë
         </ThemedText>
 
         <Button
