@@ -1,125 +1,243 @@
+
 import MesazhiIm from '@/components/MesazhiIm';
-import * as Device from 'expo-device';
 import { useState } from 'react';
-import { Button, Platform, StyleSheet } from 'react-native';
+import {
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-
-
-import { AnimatedIcon } from '@/components/animated-icon';
-import { HintRow } from '@/components/hint-row';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { WebBadge } from '@/components/web-badge';
-import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
-
-function getDevMenuHint() {
-  if (Platform.OS === 'web') {
-    return <ThemedText type="small">use browser devtools</ThemedText>;
-  }
-  if (Device.isDevice) {
-    return (
-      <ThemedText type="small">
-        shake device or press <ThemedText type="code">m</ThemedText> in terminal
-      </ThemedText>
-    );
-  }
-  const shortcut = Platform.OS === 'android' ? 'cmd+m (or ctrl+m)' : 'cmd+d';
-  return (
-    <ThemedText type="small">
-      press <ThemedText type="code">{shortcut}</ThemedText>
-    </ThemedText>
-  );
-}
+let numriMeLet = 0;
 
 export default function HomeScreen() {
-  let numriMeLet = 0;
   const [numri, setNumri] = useState(0);
 
   return (
-    <ThemedView style={styles.container}>
-      <SafeAreaView style={styles.safeArea}>
-        <ThemedView style={styles.heroSection}>
-          <AnimatedIcon />
-          <ThemedText type="title" style={styles.title}>
-            Përshëndetje! Ky është projekti im.
-          </ThemedText>
-        </ThemedView>
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.content}
+      >
+        <View style={styles.header}>
+          <Text style={styles.emoji}>✨</Text>
+          <Text style={styles.title}>
+            Përshëndetje!
+          </Text>
+          <Text style={styles.subtitle}>
+            Mirë se erdhe në projektin tim
+          </Text>
+        </View>
 
-        <MesazhiIm />
-        
-        <ThemedText>
-          Numri me useState: {numri} herë
-        </ThemedText>
+        <View style={styles.card}>
+          <Text style={styles.sectionTitle}>
+            Komponenti im
+          </Text>
+          <MesazhiIm />
+        </View>
 
-        <Button
-          title="Rrit numrin me let"
-          onPress={() => {
-            numriMeLet++;
-            console.log('Numri me let:', numriMeLet);
-          }}
-        />
+        <View style={styles.counterCard}>
+          <Text style={styles.sectionTitle}>
+            Provo numëruesin
+          </Text>
 
-        <Button
-          title="Rrit numrin me useState"
-          onPress={() => setNumri(n => n + 1)}
-        />
+          <Text style={styles.description}>
+            Ky numër ndryshon sa herë që shtyp butonin.
+          </Text>
 
+          <View style={styles.numberBox}>
+            <Text style={styles.number}>{numri}</Text>
+            <Text style={styles.numberLabel}>
+              {numri === 1 ? 'klikim' : 'klikime'}
+            </Text>
+          </View>
 
-        <ThemedText type="code" style={styles.code}>
-          get started
-        </ThemedText>
+          <Pressable
+            style={({ pressed }) => [
+              styles.primaryButton,
+              pressed && styles.pressedButton,
+            ]}
+            onPress={() => setNumri(n => n + 1)}
+          >
+            <Text style={styles.primaryButtonText}>
+              + Rrit numrin
+            </Text>
+          </Pressable>
 
-        <ThemedView type="backgroundElement" style={styles.stepContainer}>
-          <HintRow
-            title="Try editing"
-            hint={<ThemedText type="code">src/app/index.tsx</ThemedText>}
-          />
-          <HintRow title="Dev tools" hint={getDevMenuHint()} />
-          <HintRow
-            title="Fresh start"
-            hint={<ThemedText type="code">npm run reset-project</ThemedText>}
-          />
-        </ThemedView>
+          <Pressable
+            style={styles.secondaryButton}
+            onPress={() => setNumri(0)}
+          >
+            <Text style={styles.secondaryButtonText}>
+              Rivendos numrin
+            </Text>
+          </Pressable>
+        </View>
 
-        {Platform.OS === 'web' && <WebBadge />}
-      </SafeAreaView>
-    </ThemedView>
+        <View style={styles.infoCard}>
+          <Text style={styles.infoTitle}>
+            Prova me let
+          </Text>
+          <Text style={styles.description}>
+            Shtype butonin dhe kontrollo terminalin
+            për të parë rezultatin.
+          </Text>
+
+                 <Pressable
+            style={styles.letButton}
+            onPress={() => {
+              numriMeLet++;
+              console.log('Numri me let:', numriMeLet);
+            }}
+          >
+            <Text style={styles.letButtonText}>
+              Provo variablën let
+            </Text>
+          </Pressable>
+        </View>
+
+        {Platform.OS === 'web' && (
+          <Text style={styles.footer}>
+            Projekti im në React Native
+          </Text>
+        )}
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'row',
-  },
   safeArea: {
     flex: 1,
-    paddingHorizontal: Spacing.four,
-    alignItems: 'center',
-    gap: Spacing.three,
-    paddingBottom: BottomTabInset + Spacing.three,
-    maxWidth: MaxContentWidth,
+    backgroundColor: '#34241F',
   },
-  heroSection: {
+  content: {
+    flexGrow: 1,
+    paddingHorizontal: 20,
+    paddingTop: 24,
+    paddingBottom: 36,
+    gap: 20,
+  },
+  header: {
     alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    paddingHorizontal: Spacing.four,
-    gap: Spacing.four,
+    paddingVertical: 12,
+    gap: 8,
+  },
+  emoji: {
+    fontSize: 38,
   },
   title: {
+    fontSize: 30,
+    fontWeight: '800',
+    color: '#C0B0D2',
     textAlign: 'center',
   },
-  code: {
-    textTransform: 'uppercase',
+  subtitle: {
+    fontSize: 15,
+    color: '#E8D8CE',
+    textAlign: 'center',
   },
-  stepContainer: {
-    gap: Spacing.three,
-    alignSelf: 'stretch',
-    paddingHorizontal: Spacing.three,
-    paddingVertical: Spacing.four,
-    borderRadius: Spacing.four,
+  card: {
+    backgroundColor: '#8C78A8',
+    padding: 18,
+    borderRadius: 20,
+    gap: 10,
+    elevation: 2,
+  },
+  sectionTitle: {
+    fontSize: 19,
+    fontWeight: '700',
+    color: '#34241F',
+  },
+  counterCard: {
+    backgroundColor: '#C0B0D2',
+    padding: 20,
+    borderRadius: 20,
+    gap: 14,
+    elevation: 2,
+  },
+  description: {
+    fontSize: 14,
+    lineHeight: 21,
+    color: '#51435F',
+  },
+  numberBox: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#E0D6E9',
+    borderRadius: 16,
+    paddingVertical: 18,
+    gap: 2,
+  },
+  number: {
+    fontSize: 44,
+    fontWeight: '800',
+    color: '#34241F',
+  },
+  numberLabel: {
+    fontSize: 14,
+    color: '#51435F',
+  },
+  primaryButton: {
+    backgroundColor: '#A0A45E',
+    borderRadius: 14,
+    paddingVertical: 15,
+    alignItems: 'center',
+  },
+  primaryButtonText: {
+    color: '#282819',
+    fontSize: 16,
+    fontWeight: '700',
+  },
+  pressedButton: {
+    opacity: 0.75,
+  },
+  secondaryButton: {
+    backgroundColor: '#687B62',
+    borderWidth: 1,
+    borderColor: '#A0A45E',
+    borderRadius: 14,
+    paddingVertical: 13,
+    paddingHorizontal: 12,
+    alignItems: 'center',
+  },
+  secondaryButtonText: {
+    color: '#FFFFFF',
+    fontSize: 15,
+    fontWeight: '600',
+  },
+  infoCard: {
+    backgroundColor: '#687B62',
+    padding: 18,
+    borderRadius: 20,
+    gap: 12,
+    elevation: 2,
+  },
+  infoTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#FFFFFF',
+  },
+    letButton: {
+    backgroundColor:  '#A0A45E',
+    borderRadius: 14,
+    paddingVertical: 13,
+    paddingHorizontal: 12,
+    alignItems: 'center',
+  },
+  letButtonText: {
+    color: '#282819',
+    fontSize: 15,
+    fontWeight: '600',
+  },
+  footer: {
+    textAlign: 'center',
+    fontSize: 13,
+    color: '#E8D8CE',
+    marginTop: 4,
   },
 });
+

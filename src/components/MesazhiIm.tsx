@@ -1,4 +1,3 @@
-
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function MesazhiIm() {
@@ -13,13 +12,13 @@ export default function MesazhiIm() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#D1FAE5',
+    backgroundColor: '#687B62',
     padding: 16,
-    borderRadius: 12,
+    borderRadius: 16,
     marginTop: 16,
   },
   text: {
-    color: '#065F46',
+    color: '#FFFFFF',
     fontSize: 18,
     fontWeight: 'bold',
   },
