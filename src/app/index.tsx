@@ -1,6 +1,10 @@
+import MesazhiIm from '@/components/MesazhiIm';
 import * as Device from 'expo-device';
-import { Platform, StyleSheet } from 'react-native';
+import { useState } from 'react';
+import { Button, Platform, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
+
 
 import { AnimatedIcon } from '@/components/animated-icon';
 import { HintRow } from '@/components/hint-row';
@@ -29,15 +33,38 @@ function getDevMenuHint() {
 }
 
 export default function HomeScreen() {
+  let numriMeLet = 0;
+  const [numri, setNumri] = useState(0);
+
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
         <ThemedView style={styles.heroSection}>
           <AnimatedIcon />
           <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
+            Përshëndetje! Ky është projekti im.
           </ThemedText>
         </ThemedView>
+
+        <MesazhiIm />
+        
+        <ThemedText>
+          Numri me useState: {numri}
+        </ThemedText>
+
+        <Button
+          title="Rrit numrin me let"
+          onPress={() => {
+            numriMeLet++;
+            console.log('Numri me let:', numriMeLet);
+          }}
+        />
+
+        <Button
+          title="Rrit numrin me useState"
+          onPress={() => setNumri(n => n + 1)}
+        />
+
 
         <ThemedText type="code" style={styles.code}>
           get started
