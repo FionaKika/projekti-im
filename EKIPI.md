@@ -3,7 +3,7 @@
 
 ## Anëtarët
 - Fiona Kika
-- Shuajb Muharremi
+  
 
 ## Rruga
 2
