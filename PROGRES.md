@@ -13,6 +13,7 @@
 ## Çka bëri agjenti
 
 - Zëvendësoi përmbajtjen fillestare të artikujve me Pricely dhe krijoi navigimin e aplikacionit.
+- Shtoi përmbledhjen e idesë dhe rregullat e të dhënave të Pricely në `AGENTS.md` (M0).
 - Shtoi ekranet kryesore: Kryefaqja, Kërko, Skano, Të ruajtura, Profili, krahasimi i produktit dhe raportimi i çmimit.
 - Shtoi konfigurimin Expo për kamerën dhe GPS dhe klientin Supabase me variabla publike.
 - Përjashtoi `.env` nga Git dhe përgatiti `supabase/setup.sql`.
