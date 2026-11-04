@@ -2,18 +2,18 @@ import { useMemo, useState } from 'react';
 import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { ProductCard } from '../../components/product-card';
-import { demoProducts } from '../../data/demo-products';
+import { useProducts } from '../../context/products';
 import { palette, spacing } from '../../design/tokens';
-
-const categories = ['Të gjitha', 'Ushqime', 'Bulmet', 'Shtëpi', 'Kujdes personal'];
 
 export default function SearchScreen() {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('Të gjitha');
-  const products = useMemo(() => demoProducts.filter((product) => {
+  const { products: catalog, loading, error } = useProducts();
+  const categories = useMemo(() => ['Të gjitha', ...new Set(catalog.map((product) => product.category))], [catalog]);
+  const products = useMemo(() => catalog.filter((product) => {
     const matchesQuery = `${product.name} ${product.brand} ${product.category} ${product.barcode}`.toLocaleLowerCase().includes(query.toLocaleLowerCase());
     return matchesQuery && (category === 'Të gjitha' || product.category === category);
-  }), [query, category]);
+  }), [catalog, query, category]);
 
   return (
     <ScrollView style={styles.page} contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
@@ -28,8 +28,8 @@ export default function SearchScreen() {
         {categories.map((item) => <Text key={item} onPress={() => setCategory(item)} style={[styles.chip, category === item && styles.chipActive]}>{item}</Text>)}
       </ScrollView>
       <View style={styles.resultsHeader}><Text style={styles.resultsTitle}>{query ? 'Rezultatet' : 'Produkte të njohura'}</Text><Text style={styles.count}>{products.length} produkte</Text></View>
-      {products.length ? <View style={styles.grid}>{products.map((product) => <ProductCard key={product.id} product={product} />)}</View> : <View style={styles.empty}><Text style={styles.emptyIcon}>⌕</Text><Text style={styles.emptyTitle}>Nuk u gjet produkt</Text><Text style={styles.emptyText}>Provo një emër ose kategori tjetër.</Text></View>}
-      <Text style={styles.disclaimer}>Çmimet demonstrative · Përditësimet reale do të vijnë nga komuniteti.</Text>
+      {loading ? <Text style={styles.disclaimer}>Po ngarkohet katalogu nga Supabase…</Text> : error ? <Text style={styles.disclaimer}>{error}</Text> : products.length ? <View style={styles.grid}>{products.map((product) => <ProductCard key={product.id} product={product} />)}</View> : <View style={styles.empty}><Text style={styles.emptyIcon}>⌕</Text><Text style={styles.emptyTitle}>Nuk u gjet produkt</Text><Text style={styles.emptyText}>Provo një emër ose kategori tjetër.</Text></View>}
+      <Text style={styles.disclaimer}>Produktet lexohen drejtpërdrejt nga Supabase.</Text>
     </ScrollView>
   );
 }

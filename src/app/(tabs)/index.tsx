@@ -1,11 +1,13 @@
 import { Link } from 'expo-router';
-import { ScrollView, StyleSheet, Text, View, Pressable } from 'react-native';
+import { ActivityIndicator, ScrollView, StyleSheet, Text, View, Pressable } from 'react-native';
 
 import { ProductCard } from '../../components/product-card';
-import { demoProducts } from '../../data/demo-products';
+import { useProducts } from '../../context/products';
 import { palette, spacing } from '../../design/tokens';
 
 export default function HomeScreen() {
+  const { products, loading, error } = useProducts();
+
   return (
     <ScrollView style={styles.page} contentContainerStyle={styles.content}>
       <View style={styles.header}>
@@ -45,14 +47,16 @@ export default function HomeScreen() {
       <View style={styles.sectionHeader}>
         <View>
           <Text style={styles.sectionTitle}>Kursime afër teje</Text>
-          <Text style={styles.sectionSub}>Çmime të raportuara së fundmi</Text>
+          <Text style={styles.sectionSub}>Katalogu i lexuar nga Supabase</Text>
         </View>
         <Link href="/(tabs)/search" style={styles.seeAll}>Shiko të gjitha  →</Link>
       </View>
 
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.horizontalCards}>
-        {demoProducts.slice(0, 4).map((product) => <ProductCard key={product.id} product={product} compact />)}
-      </ScrollView>
+      {loading ? <ActivityIndicator style={styles.loading} color={palette.forest} /> : error ? <Text style={styles.dataError}>{error}</Text> : products.length ? (
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.horizontalCards}>
+          {products.slice(0, 4).map((product) => <ProductCard key={product.id} product={product} compact />)}
+        </ScrollView>
+      ) : <Text style={styles.dataError}>Supabase nuk ka produkte ende.</Text>}
 
       <View style={styles.tipCard}>
         <View style={styles.tipIcon}><Text style={styles.tipIconText}>✦</Text></View>
@@ -62,7 +66,7 @@ export default function HomeScreen() {
         </View>
         <Link href="/(tabs)/scan" style={styles.tipArrow}>→</Link>
       </View>
-      <Text style={styles.disclaimer}>Çmimet në këtë pamje janë shembuj demonstrues.</Text>
+      <Text style={styles.disclaimer}>Produktet dhe çmimet e miratuara lexohen nga Supabase.</Text>
     </ScrollView>
   );
 }
@@ -94,6 +98,7 @@ const styles = StyleSheet.create({
   sectionSub: { color: palette.muted, fontSize: 12, marginTop: 3 },
   seeAll: { color: palette.forest, fontSize: 11, fontWeight: '700', paddingBottom: 2 },
   horizontalCards: { gap: 12, paddingBottom: 5 },
+  loading: { marginVertical: 24 }, dataError: { color: palette.muted, fontSize: 12, lineHeight: 18, paddingVertical: 16 },
   tipCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: '#EEF1E8', borderRadius: 18, marginTop: 19, padding: 15 },
   tipIcon: { width: 38, height: 38, borderRadius: 13, backgroundColor: palette.lime, alignItems: 'center', justifyContent: 'center' },
   tipIconText: { color: palette.forest, fontSize: 19, fontWeight: '800' },

@@ -5,13 +5,14 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { useRef, useState } from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
-import { demoProducts } from '../../data/demo-products';
+import { useProducts } from '../../context/products';
 import { isSupabaseConfigured, supabase } from '../../lib/supabase';
 import { palette, spacing } from '../../design/tokens';
 
 export default function ReportPriceScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const product = demoProducts.find((item) => item.id === id);
+  const { products, loading, error } = useProducts();
+  const product = products.find((item) => item.id === id);
   const cameraRef = useRef<CameraView>(null);
   const [cameraPermission, requestCameraPermission] = useCameraPermissions();
   const [showCamera, setShowCamera] = useState(false);
@@ -120,7 +121,7 @@ export default function ReportPriceScreen() {
     }
   }
 
-  if (!product) return <View style={styles.notFound}><Text style={styles.title}>Produkti nuk u gjet.</Text></View>;
+  if (!product) return <View style={styles.notFound}><Text style={styles.title}>{loading ? 'Po ngarkohen produktet…' : error ?? 'Produkti nuk u gjet.'}</Text></View>;
 
   return (
     <ScrollView style={styles.page} contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">

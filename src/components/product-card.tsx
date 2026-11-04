@@ -7,19 +7,24 @@ import { palette } from '../design/tokens';
 
 export function ProductCard({ product, compact = false }: { product: Product; compact?: boolean }) {
   const lowest = getLowestPrice(product);
-  const highest = Math.max(...product.prices.map((price) => price.price));
-  const discount = Math.round((1 - lowest.price / highest) * 100);
+  const highest = product.prices.length ? Math.max(...product.prices.map((price) => price.price)) : 0;
+  const discount = lowest && highest > lowest.price ? Math.round((1 - lowest.price / highest) * 100) : null;
   return (
     <Link href={{ pathname: '/product/[id]', params: { id: product.id } }} asChild>
       <Pressable style={[styles.card, compact && styles.compact]}>
         <View style={[styles.productImage, { backgroundColor: product.color }, compact && styles.compactImage]}>
           <Text style={styles.emoji}>{product.emoji}</Text>
-          <View style={styles.discount}><Text style={styles.discountText}>−{discount}%</Text></View>
+          {discount !== null && <View style={styles.discount}><Text style={styles.discountText}>−{discount}%</Text></View>}
         </View>
         <Text style={styles.brand}>{product.brand} · {product.amount}</Text>
         <Text numberOfLines={1} style={styles.name}>{product.name}</Text>
-        <View style={styles.priceRow}><Text style={styles.price}>€{lowest.price.toFixed(2)}</Text><Text style={styles.store}>{lowest.store}</Text></View>
-        <Text style={styles.location}>{lowest.distanceKm.toFixed(1)} km larg · {lowest.area}</Text>
+        {lowest ? <>
+          <View style={styles.priceRow}><Text style={styles.price}>€{lowest.price.toFixed(2)}</Text><Text style={styles.store}>{lowest.store}</Text></View>
+          <Text style={styles.location}>{lowest.area}</Text>
+        </> : <>
+          <Text style={styles.noPrice}>Pa çmime ende</Text>
+          <Text style={styles.location}>Raporto çmimin e parë</Text>
+        </>}
       </Pressable>
     </Link>
   );
@@ -35,5 +40,6 @@ const styles = StyleSheet.create({
   brand: { color: palette.muted, fontSize: 9, fontWeight: '600' }, name: { color: palette.ink, fontSize: 13, fontWeight: '800', marginTop: 3 },
   priceRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline', marginTop: 8 },
   price: { color: palette.forest, fontSize: 17, fontWeight: '900' }, store: { color: palette.muted, fontSize: 9, fontWeight: '700' },
+  noPrice: { color: palette.forest, fontSize: 13, fontWeight: '900', marginTop: 8 },
   location: { color: palette.muted, fontSize: 9, marginTop: 3 },
 });

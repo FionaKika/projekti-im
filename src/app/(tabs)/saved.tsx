@@ -2,19 +2,20 @@ import { Link } from 'expo-router';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 
 import { ProductCard } from '../../components/product-card';
-import { demoProducts } from '../../data/demo-products';
 import { useSavedProducts } from '../../context/saved-products';
+import { useProducts } from '../../context/products';
 import { palette, spacing } from '../../design/tokens';
 
 export default function SavedScreen() {
   const { savedIds } = useSavedProducts();
-  const products = demoProducts.filter((product) => savedIds.includes(product.id));
+  const { products: catalog, loading } = useProducts();
+  const products = catalog.filter((product) => savedIds.includes(product.id));
   return (
     <ScrollView style={styles.page} contentContainerStyle={styles.content}>
       <Text style={styles.kicker}>LISTA IME</Text>
       <Text style={styles.title}>Të ruajtura</Text>
       <Text style={styles.subtitle}>Produktet që dëshiron t’i krahasosh përsëri.</Text>
-      {products.length ? <View style={styles.grid}>{products.map((product) => <ProductCard key={product.id} product={product} />)}</View> : (
+      {loading ? <Text style={styles.emptyText}>Po ngarkohet lista…</Text> : products.length ? <View style={styles.grid}>{products.map((product) => <ProductCard key={product.id} product={product} />)}</View> : (
         <View style={styles.empty}><Text style={styles.heart}>♡</Text><Text style={styles.emptyTitle}>Lista jote është bosh</Text><Text style={styles.emptyText}>Ruaj një produkt për të ndjekur çmimet e tij.</Text><Link href="/(tabs)/search" style={styles.button}>Gjej produkte  →</Link></View>
       )}
     </ScrollView>

@@ -3,10 +3,11 @@ import { Link, router, useFocusEffect } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
 
-import { demoProducts } from '../../data/demo-products';
+import { useProducts } from '../../context/products';
 import { palette, spacing } from '../../design/tokens';
 
 export default function ScanScreen() {
+  const { products, loading, error } = useProducts();
   const [permission, requestPermission] = useCameraPermissions();
   const [focused, setFocused] = useState(false);
   const [scanned, setScanned] = useState(false);
@@ -20,7 +21,7 @@ export default function ScanScreen() {
   const onBarcodeScanned = ({ data }: { data: string }) => {
     if (scanned) return;
     setScanned(true);
-    const product = demoProducts.find((item) => item.barcode === data);
+    const product = products.find((item) => item.barcode === data);
     if (product) router.push({ pathname: '/product/[id]', params: { id: product.id } });
     else setNotFound(data);
   };
@@ -38,7 +39,7 @@ export default function ScanScreen() {
         </View>
       ) : <View style={styles.cameraPaused}><Text style={styles.permissionText}>Skaneri është ndalur derisa të kthehesh te ky ekran.</Text></View>}
       <View style={styles.footer}><Text style={styles.footerIcon}>✦</Text><View style={styles.footerCopy}><Text style={styles.footerTitle}>Nuk ka barkod?</Text><Text style={styles.footerText}>Kërko produktin me emër në katalog.</Text></View><Link href="/(tabs)/search" style={styles.footerArrow}>→</Link></View>
-      <Text style={styles.disclaimer}>Krahasimi shfaqet për produktet në katalogun demonstrues.</Text>
+      <Text style={styles.disclaimer}>{loading ? 'Po lexohet katalogu nga Supabase…' : error ?? 'Skanimi kërkon produktet e katalogut Supabase.'}</Text>
     </View>
   );
 }

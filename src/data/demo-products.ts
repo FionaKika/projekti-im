@@ -1,4 +1,4 @@
-export type StorePrice = { store: string; area: string; price: number; distanceKm: number; updated: string };
+export type StorePrice = { store: string; area: string; price: number; distanceKm?: number; updated: string; latitude?: number; longitude?: number };
 export type Product = {
   id: string; barcode: string; name: string; brand: string; category: string;
   amount: string; emoji: string; color: string; prices: StorePrice[];
