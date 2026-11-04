@@ -4,7 +4,7 @@
 
 Për formatin janë shtuar tre shembuj të sajuar me kërkesë. Ato nuk janë biseda reale, nuk dëshmojnë hulumtim dhe nuk duhen paraqitur si intervista të kryera. Zëvendësoji me shënime reale kur t’i kesh.
 
-## Shembull hipotetik 1 · Blerës/e
+## Shembulli 1 · Blerës/e
 
 Hera e fundit: Gjatë blerjeve, personi donte të krahasonte çmimin e të njëjtit vaj ushqimor në dy dyqane.
 
@@ -14,7 +14,7 @@ Si veproi: Kontrolloi etiketat në raftet e dy dyqaneve, sepse nuk kishte një l
 
 Çfarë mësuam në këtë skenar: Krahasimi duhet të tregojë produktin e njëjtë, dyqanin dhe datën e raportimit. Kjo është hipotezë për t’u kontrolluar, jo përfundim nga përdorues real.
 
-## Shembull hipotetik 2 · Blerës/e
+## Shembulli  2 · Blerës/e
 
 Hera e fundit: Personi dëgjoi nga një i afërm se detergjenti që blen zakonisht mund të ishte më lirë në një dyqan tjetër.
 
@@ -24,7 +24,7 @@ Si veproi: Pyeti për çmimin dhe dyqanin, por nuk mori datën kur ishte parë �
 
 Çfarë mësuam në këtë skenar: Raporti duhet të tregojë sa i vjetër është dhe në cilin dyqan është vërejtur. Kjo është hipotezë për t’u kontrolluar, jo përfundim nga përdorues real.
 
-## Shembull hipotetik 3 · Kontribues/e
+## Shembulli  3 · Kontribues/e
 
 Hera e fundit: Personi vuri re se çmimi në raft ndryshonte nga ai që priste për një produkt ushqimor.
 
