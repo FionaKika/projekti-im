@@ -1,6 +1,6 @@
 Ky është një aplikacion celular Expo/React Native. Jep përparësi zgjidhjeve të përshtatshme për telefonat, performancës dhe përputhshmërisë ndërmjet platformave.
 
-## vvvvvvvvvvvvo në Git. Mbaje .env jashtë Git-it.
+Pricely
 - Raportimet e komunitetit fillojnë me statusin `pending` (në pritje); vetëm raportimet e shqyrtuara dhe të miratuara shfaqen si çmime publike.
 - Shëno qartë si të dhëna demonstrimi produktet, dyqanet, çmimet dhe kursimet shembull. Mos lë të kuptohet se janë oferta aktuale.
 
