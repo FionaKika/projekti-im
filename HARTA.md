@@ -1,6 +1,5 @@
 # HARTA
 
-> **Shënim historik:** Harta më poshtë përshkruan konceptin e mëparshëm për rezervimin e termineve në sallone bukurie. Ajo nuk paraqet rrjedhën e Pricely.
 
 ## Projekti aktiv: Pricely
 
