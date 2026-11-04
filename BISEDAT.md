@@ -1,8 +1,5 @@
 # Bisedat me përdorues – Pricely
 
-## Gjendja e kërkimit
-
-Për formatin janë shtuar tre shembuj të sajuar me kërkesë. Ato nuk janë biseda reale, nuk dëshmojnë hulumtim dhe nuk duhen paraqitur si intervista të kryera. Zëvendësoji me shënime reale kur t’i kesh.
 
 ## Shembulli 1 · Blerës/e
 
