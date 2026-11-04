@@ -13,7 +13,7 @@ export default function HomeScreen() {
       <View style={styles.header}>
         <View>
           <Text style={styles.brand}>pricely<Text style={styles.brandDot}>.</Text></Text>
-          <Text style={styles.location}>⌖  Prishtinë, Kosovë  ▾</Text>
+          <Text style={styles.location}>⌖  Mitrovicë, Kosovë  ▾</Text>
         </View>
         <Link href="/(tabs)/profile" asChild>
           <Pressable style={styles.avatar} accessibilityLabel="Profili im">

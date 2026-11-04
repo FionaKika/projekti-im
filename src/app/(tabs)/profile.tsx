@@ -3,7 +3,7 @@ import { palette, spacing } from '../../design/tokens';
 
 const options = [
   ['◎', 'Llogaria ime', 'Hyr ose krijo llogari'],
-  ['⌖', 'Vendndodhja', 'Prishtinë, Kosovë'],
+  ['⌖', 'Vendndodhja', 'Mitrovicë, Kosovë'],
   ['♡', 'Produktet e ruajtura', 'Ndiq çmimet që të interesojnë'],
   ['◷', 'Aktiviteti im', 'Çmimet që ke raportuar'],
   ['?', 'Ndihmë dhe sugjerime', 'Na ndihmo ta përmirësojmë Pricely'],
