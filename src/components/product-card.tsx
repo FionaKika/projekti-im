@@ -11,7 +11,7 @@ export function ProductCard({ product, compact = false }: { product: Product; co
   const discount = lowest && highest > lowest.price ? Math.round((1 - lowest.price / highest) * 100) : null;
   return (
     <Link href={{ pathname: '/product/[id]', params: { id: product.id } }} asChild>
-      <Pressable style={[styles.card, compact && styles.compact]}>
+      <Pressable style={StyleSheet.flatten([styles.card, compact && styles.compact])}>
         <View style={[styles.productImage, { backgroundColor: product.color }, compact && styles.compactImage]}>
           <Text style={styles.emoji}>{product.emoji}</Text>
           {discount !== null && <View style={styles.discount}><Text style={styles.discountText}>−{discount}%</Text></View>}
