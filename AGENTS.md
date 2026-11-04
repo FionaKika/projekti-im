@@ -1,5 +1,27 @@
 This is an Expo/React Native mobile application. Prioritize mobile-first patterns, performance, and cross-platform compatibility.
 
+## Project context: Pricely
+
+Pricely is a mobile app for comparing everyday product prices by store so shoppers can find lower prices nearby. The first rollout is focused on a small product catalog and local shops in Kosovo. The interface uses Albanian and prices use euros.
+
+### Shopper and contributor flows
+
+- Shoppers search by product name, category, or barcode; compare store prices, distance, and when each price was reported; and save products or shopping lists.
+- Barcode scanning uses the phone camera. A price contribution includes the product, store, price, a photo of the shelf label, and foreground GPS coordinates.
+- Request camera and location access only when the person starts a feature that needs it. Do not collect background location.
+- Basic product search and price comparison stay free. Optional alerts and advanced lists can be considered later.
+
+### Data and trust
+
+- Supabase is the planned backend for products, stores, price reports, accounts, and private evidence photos.
+- Public clients use only a publishable key. Never include Supabase secret or `service_role` keys in the app or Git. Keep `.env` ignored.
+- Community price reports start as `pending`; only reviewed, approved reports should be treated as public prices. Clearly label sample prices and shops as demo data.
+- Admin review and price statistics are later features. Do not claim that demo shops, prices, maps, or savings reflect current real-world offers.
+
+### Current project stage
+
+The app currently has a demo catalog, product search and comparison, saved products, barcode scanning, and a price-report form that can upload a private photo and create a pending Supabase row once configured. Authentication, persistent favorites, live approved-price queries, and a real store map remain future work. Update this summary when the project scope changes.
+
 ## Expo has changed — do not trust your training data
 
 Expo ships breaking changes every SDK release. APIs you remember are likely renamed, moved, or removed. Before writing any code that touches an Expo, EAS, or React Native API:
