@@ -1,6 +1,14 @@
 
 # EKIPI
 
+## Projekti aktiv: Pricely
+
+Pricely është aplikacion mobil në shqip për krahasimin e çmimeve të produkteve të përditshme sipas dyqanit dhe afërsisë në Kosovë. Blerësit mund të kërkojnë produkte sipas emrit, kategorisë ose barkodit, të krahasojnë çmimet dhe të ruajnë produkte ose lista. Kontribuesit mund të dërgojnë raport çmimi me fotografi të etiketës dhe vendndodhje vetëm kur e përdorin veçorinë. Raportet e reja presin shqyrtim para se të shfaqen si çmime publike.
+
+Anëtarët e ekipit të regjistruar më poshtë ruhen nga dokumenti origjinal. Intervistat dhe ideja e sallonit më poshtë i përkasin konceptit të mëparshëm dhe nuk janë hulumtim për Pricely.
+
+## Regjistrimi historik i ekipit dhe konceptit të mëparshëm
+
 ## Anëtarët
 - Fiona Kika
 

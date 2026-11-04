@@ -1,3 +1,5 @@
+> **Shënim historik:** Bisedat më poshtë janë kryer për konceptin e mëparshëm të organizimit të termineve në sallone bukurie. Ato nuk janë intervista apo validim për Pricely. Hulumtimi për Pricely duhet të regjistrohet veçmas, pasi të kryhen biseda reale me përdoruesit e atij koncepti.
+
 ## Biseda 1 · 01.11.2026 · Pronare e sallonit të bukurisë
 
 Hera e fundit: Klientja kishte ardhur në sallon për një termin që pronarja e kishte harruar.
