@@ -1,61 +1,51 @@
-This is an Expo/React Native mobile application. Prioritize mobile-first patterns, performance, and cross-platform compatibility.
+Ky është një aplikacion celular Expo/React Native. Jep përparësi zgjidhjeve të përshtatshme për telefonat, performancës dhe përputhshmërisë ndërmjet platformave.
 
-## Active project: Pricely
+## vvvvvvvvvvvvo në Git. Mbaje .env jashtë Git-it.
+- Raportimet e komunitetit fillojnë me statusin `pending` (në pritje); vetëm raportimet e shqyrtuara dhe të miratuara shfaqen si çmime publike.
+- Shëno qartë si të dhëna demonstrimi produktet, dyqanet, çmimet dhe kursimet shembull. Mos lë të kuptohet se janë oferta aktuale.
 
-Pricely helps shoppers compare everyday product prices by store and find lower prices nearby. The first rollout is a small catalog and local shops in Kosovo. The interface is in Albanian and prices use euros.
+### Burimi i projektit
 
-Shoppers can search by product name, category, or barcode; compare store prices, distance, and report age; and save products or shopping lists. Contributors can scan a product, enter a store price, photograph the shelf label, and attach foreground GPS coordinates. Ask for camera or location permission only when the user starts a feature that needs it. Do not collect background location.
+Skedarët origjinalë `EKIPI.md` dhe `HARTA.md` në këtë depo përshkruajnë një organizues takimesh për sallone bukurie. Zbatimi aktiv i aplikacionit ndjek kalimin e mëvonshëm dhe të qartë të përdoruesit te Pricely. `BISEDAT.md` përmban shembuj hipotetikë të shënuar qartë, të kërkuar për formatim; mos i paraqit kurrë si intervista reale ose si vërtetim të idesë. Zëvendësoji me kërkime reale të dhëna nga përdoruesi kur të jenë në dispozicion.
 
-Basic product search and price comparison stay free. Optional price alerts and advanced shopping lists can be considered later. Admin review and price statistics are later features.
+## Expo ndryshon — mos u mbështet te njohuritë e vjetruara
 
-### Data and trust
+Çdo version i SDK-së mund të sjellë ndryshime të papajtueshme në Expo. Para se të shkruash kod që përdor një API të Expo, EAS ose React Native:
 
-- Supabase is the planned backend for products, stores, price reports, accounts, and private evidence photos.
-- Public app code may use only a Supabase publishable key. Never put secret or `service_role` keys in the app or Git. Keep `.env` ignored.
-- Community reports begin as `pending`; only reviewed, approved reports are public prices.
-- Clearly label sample products, stores, prices, and savings as demo data. Do not imply they are current offers.
+1. Kontrollo versionin kryesor të `expo` në `package.json`.
+2. Hap dokumentacionin e versionuar përkatës: `https://docs.expo.dev/versions/v<major>.0.0/`.
+3. Për temat e Expo-s, lexo `https://docs.expo.dev/llms.txt` dhe ndiq lidhjet drejt faqes përkatëse. Mos u mbështet te API-të që mban mend.
 
-### Project source record
+## Komandat
 
-The original `EKIPI.md` and `HARTA.md` in this repository describe an Appointment Organizer for beauty salons. The active app implementation follows the user's later, explicit pivot to Pricely. `BISEDAT.md` contains clearly labeled hypothetical examples requested for formatting; never present them as real interviews or validation. Replace them with real, user-provided research when available.
-
-## Expo has changed — do not trust your training data
-
-Expo ships breaking changes each SDK release. Before writing code that touches an Expo, EAS, or React Native API:
-
-1. Read the major version of `expo` in `package.json`.
-2. Fetch the matching versioned docs: `https://docs.expo.dev/versions/v<major>.0.0/`.
-3. For Expo topics, read `https://docs.expo.dev/llms.txt` and follow its links to the specific page. Do not rely on remembered APIs.
-
-## Commands
-
-Use `bunx` instead of `npx` if the project uses Bun (`bun.lock` present).
+Përdor `bunx` në vend të `npx` nëse projekti përdor Bun (nëse ekziston skedari `bun.lock`).
 
 ```bash
-npx expo install <package>  # Use Expo's compatible package version
-npx expo start              # Start the development server
-npx expo lint               # Lint
-npx tsc --noEmit            # Typecheck
-npx expo-doctor             # Diagnose dependency and config issues
-npx expo install --fix      # Fix incompatible package versions
+npx expo install <package>  # Instalimi i versionit të paketës që përputhet me Expo-n
+npx expo start              # Nisja e serverit të zhvillimit
+npx expo lint               # Kontrolli i stilit dhe gabimeve të kodit
+npx tsc --noEmit            # Kontrolli i tipeve
+npx expo-doctor             # Diagnostikimi i varësive dhe konfigurimit
+npx expo install --fix      # Rregullimi i versioneve të papajtueshme të paketave
 ```
 
-Run lint and typecheck before declaring a task done. Test device features on a physical phone using Expo Go when they are included there.
+Kryej lint dhe kontrollin e tipeve para se ta quash detyrën të përfunduar. Veçoritë që varen nga pajisja provoji në një telefon fizik me Expo Go, kur përfshihen në Expo Go.
 
-## Navigation and routing
+## Navigimi dhe rrugët
 
-- Use Expo Router for all navigation. Routes live in `src/app/`; `_layout.tsx` files define navigators. Keep non-route code outside `src/app/`.
-- Import `Link`, `router`, and `useLocalSearchParams` from `expo-router`.
-- Docs: https://docs.expo.dev/router/introduction.md
+- Përdor Expo Router për të gjithë navigimin. Rrugët ndodhen te `src/app/`; skedarët `_layout.tsx` përcaktojnë navigatorët. Mbaje kodin që nuk përfaqëson rrugë jashtë `src/app/`.
+- Importo `Link`, `router` dhe `useLocalSearchParams` nga `expo-router`.
+- Dokumentacioni: `https://docs.expo.dev/router/introduction.md`
 
-## Building with EAS
+## Ndërtimi me EAS
 
-Use EAS to build, sign, and submit the app in the cloud and to ship over-the-air updates. Run EAS CLI as `bunx eas-cli <command>` in Bun projects, or `npx eas-cli@latest <command>` otherwise.
-Docs: https://docs.expo.dev/eas/index.md
+Përdor EAS për ta ndërtuar, nënshkruar dhe dërguar aplikacionin në cloud, si dhe për të publikuar përditësime OTA. Në projektet Bun, ekzekuto EAS CLI me `bunx eas-cli <command>`; në të tjerat, përdor `npx eas-cli@latest <command>`.
 
-## Rules
+Dokumentacioni: `https://docs.expo.dev/eas/index.md`
 
-- If `ios/` and `android/` directories do not exist, they are generated with Continuous Native Generation. Never create or edit them by hand; configure native behavior in `app.json` and config plugins.
-- Expo Go includes only its bundled native modules. If a new library is not included in Expo Go, the app needs a development build (`npx expo run:ios|android` or `eas build --profile development`).
-- Prefer recommended Expo modules over third-party libraries, and check available skills before adding dependencies. Docs: https://docs.expo.dev/versions/latest/index.md
-- Commit after each working development step and review the diff before committing.
+## Rregullat
+
+- Nëse drejtoritë `ios/` dhe `android/` nuk ekzistojnë, ato krijohen me Continuous Native Generation. Mos i krijo ose modifiko manualisht; konfiguro sjelljen native te `app.json` dhe te config plugins.
+- Expo Go përfshin vetëm modulet native të paketuara me të. Nëse një bibliotekë e re nuk përfshihet në Expo Go, aplikacioni ka nevojë për një development build (`npx expo run:ios|android` ose `eas build --profile development`).
+- Jep përparësi moduleve të rekomanduara nga Expo dhe kontrollo aftësitë ekzistuese para se të shtosh varësi. Dokumentacioni: `https://docs.expo.dev/versions/latest/index.md`.
+- Pas çdo hapi funksional të zhvillimit, shqyrto ndryshimet dhe krijo një commit.
