@@ -16,7 +16,7 @@ export default function TabLayout() {
       headerShown: false,
       tabBarActiveTintColor: palette.forest,
       tabBarInactiveTintColor: '#89958B',
-      tabBarStyle: { backgroundColor: '#FFFFFF', borderTopColor: '#E7EBE3', height: 78, paddingTop: 8, paddingBottom: 15 },
+      tabBarStyle: { backgroundColor: '#FFFFFF', borderTopColor: '#E7EBE3', paddingTop: 6 },
       tabBarLabelStyle: { fontSize: 10, fontWeight: '700' },
     }}>
       <Tabs.Screen name="index" options={{ title: 'Kryefaqja', tabBarIcon: ({ color }) => <SymbolView name={icons.index} tintColor={color} size={21} /> }} />
