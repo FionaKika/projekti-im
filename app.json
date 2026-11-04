@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "projekti-im",
-    "slug": "projekti-im",
+    "name": "Pricely",
+    "slug": "pricely",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "projektiim",
-    "userInterfaceStyle": "automatic",
+    "scheme": "pricely",
+    "userInterfaceStyle": "light",
     "ios": {
       "icon": "./assets/expo.icon"
     },
@@ -25,6 +25,20 @@
     },
     "plugins": [
       "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Pricely përdor kamerën për të skanuar barkodet dhe për të fotografuar etiketat e çmimeve.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Pricely përdor vendndodhjen vetëm kur shton një çmim ose kërkon dyqane pranë teje."
+        }
+      ],
       [
         "expo-splash-screen",
         {

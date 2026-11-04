@@ -1,12 +1,15 @@
 
 import { Stack } from 'expo-router';
+import { SavedProductsProvider } from '../context/saved-products';
 
 export default function RootLayout() {
   return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="index" />
-      <Stack.Screen name="explore" />
-      <Stack.Screen name="artikull/[id]" />
-    </Stack>
+    <SavedProductsProvider>
+      <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: '#F6F7F2' } }}>
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="product/[id]" options={{ presentation: 'card' }} />
+        <Stack.Screen name="report/[id]" options={{ presentation: 'modal' }} />
+      </Stack>
+    </SavedProductsProvider>
   );
 }
