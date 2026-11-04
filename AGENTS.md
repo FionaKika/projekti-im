@@ -17,7 +17,7 @@ Basic product search and price comparison stay free. Optional price alerts and a
 
 ### Project source record
 
-The original `EKIPI.md`, `BISEDAT.md`, and `HARTA.md` in this repository describe an Appointment Organizer for beauty salons. The active app implementation follows the user's later, explicit pivot to Pricely. Preserve the original team and interview records; do not claim they validate Pricely. Update them only with real, user-provided research for the new concept.
+The original `EKIPI.md` and `HARTA.md` in this repository describe an Appointment Organizer for beauty salons. The active app implementation follows the user's later, explicit pivot to Pricely. `BISEDAT.md` contains clearly labeled hypothetical examples requested for formatting; never present them as real interviews or validation. Replace them with real, user-provided research when available.
 
 ## Expo has changed — do not trust your training data
 

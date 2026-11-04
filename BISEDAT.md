@@ -1,31 +1,35 @@
-> **Shënim historik:** Bisedat më poshtë janë kryer për konceptin e mëparshëm të organizimit të termineve në sallone bukurie. Ato nuk janë intervista apo validim për Pricely. Hulumtimi për Pricely duhet të regjistrohet veçmas, pasi të kryhen biseda reale me përdoruesit e atij koncepti.
+# Bisedat me përdorues – Pricely
 
-## Biseda 1 · 01.11.2026 · Pronare e sallonit të bukurisë
+## Gjendja e kërkimit
 
-Hera e fundit: Klientja kishte ardhur në sallon për një termin që pronarja e kishte harruar.
+Për formatin janë shtuar tre shembuj të sajuar me kërkesë. Ato nuk janë biseda reale, nuk dëshmojnë hulumtim dhe nuk duhen paraqitur si intervista të kryera. Zëvendësoji me shënime reale kur t’i kesh.
 
-Si e zgjidhi: Për fat të mirë, ishte një ditë e qetë dhe klientja u shërbye.
+## Shembull hipotetik 1 · Blerës/e
 
-Çka i kushtoi: Nuk pati humbje të konsiderueshme, pasi klientja arriti të merrte shërbimin.
+Hera e fundit: Gjatë blerjeve, personi donte të krahasonte çmimin e të njëjtit vaj ushqimor në dy dyqane.
 
-Çka nuk e dinim: Terminet rezervohen përmes telefonatave ose mesazheve dhe shënohen në fletore. Pronarja shënon emrin e klientes dhe orarin, ndërsa kur ka nevojë kontrollon cila punëtore është e lirë. Ka pasur raste kur ka harruar termine.
+Si veproi: Kontrolloi etiketat në raftet e dy dyqaneve, sepse nuk kishte një listë të përditësuar të çmimeve.
 
-## Biseda 2 · 01.11.2026 · Punëtore në sallon bukurie
+Çfarë i kushtoi: Kohë shtesë dhe një ecje tjetër mes dyqaneve; shuma nuk dihet.
 
-Hera e fundit: Dy termine u ngatërruan dhe një kliente u detyrua të priste.
+Çfarë mësuam në këtë skenar: Krahasimi duhet të tregojë produktin e njëjtë, dyqanin dhe datën e raportimit. Kjo është hipotezë për t’u kontrolluar, jo përfundim nga përdorues real.
 
-Si e zgjidhi: Klientja priti derisa të lirohej orari për shërbimin e saj.
+## Shembull hipotetik 2 · Blerës/e
 
-Çka i kushtoi: Klientja priti rreth 2 orë.
+Hera e fundit: Personi dëgjoi nga një i afërm se detergjenti që blen zakonisht mund të ishte më lirë në një dyqan tjetër.
 
-Çka nuk e dinim: Punëtorja i shënon terminet në telefon dhe rezervimet bëhen përmes telefonatave dhe mesazheve. Ngatërrimet ndodhin shumë rrallë, por mund të shkaktojnë pritje të gjata për klientet.
+Si veproi: Pyeti për çmimin dhe dyqanin, por nuk mori datën kur ishte parë çmimi; e kontrolloi vetë gjatë blerjes së radhës.
 
-## Biseda 3 · 01.11.2026 · Kliente e sallonit të bukurisë
+Çfarë i kushtoi: Priti për informacion dhe prapë duhej ta verifikonte; koha dhe kostoja e saktë nuk dihen.
 
-Hera e fundit: Klientja nuk gjeti orar të lirë në ditën që dëshironte dhe iu desh ta rezervonte për një ditë tjetër.
+Çfarë mësuam në këtë skenar: Raporti duhet të tregojë sa i vjetër është dhe në cilin dyqan është vërejtur. Kjo është hipotezë për t’u kontrolluar, jo përfundim nga përdorues real.
 
-Si e zgjidhi: Kontaktoi sallonin përmes mesazheve dhe pyeti për oraret e disponueshme.
+## Shembull hipotetik 3 · Kontribues/e
 
-Çka i kushtoi: Nuk pati ndonjë humbje të veçantë, por iu desh ta shtynte vizitën për një ditë tjetër.
+Hera e fundit: Personi vuri re se çmimi në raft ndryshonte nga ai që priste për një produkt ushqimor.
 
-Çka nuk e dinim: Klientja i rezervon terminet përmes mesazheve dhe merr përgjigje menjëherë. Për të gjetur një orar të lirë, duhet të kontaktojë sallonin dhe të pyesë për disponueshmërinë. Ajo do ta kishte më të lehtë nëse do të mund t'i shihte vetë oraret e lira dhe ta rezervonte terminin përmes aplikacionit.
+Si veproi: Kontrolloi emrin dhe madhësinë e produktit, fotografoi etiketën për ta mbajtur shënim dhe planifikoi ta ndante çmimin me të tjerët.
+
+Çfarë i kushtoi: Kohë për të regjistruar produktin dhe etiketën; nuk dihet nëse raportimi u nda.
+
+Çfarë mësuam në këtë skenar: Raportimi duhet të jetë i shkurtër dhe të ruajë provën e çmimit. Kjo është hipotezë për t’u kontrolluar, jo përfundim nga kontribues real.
